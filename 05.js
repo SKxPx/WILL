@@ -1,8 +1,8 @@
 /* 
   Importante: 
-  No modificar ni el nombre ni los argumetos que reciben las funciones, sólo deben escribir
+  No modificar ni el nombre ni los argumentos que reciben las funciones, sólo deben escribir
   código dentro de las funciones ya definidas. 
-  No comentar la funcion 
+  No comentar la función 
 */
 function pluck(array, propiedad) {
   // La función llamada 'pluck' recibe como argumento un array de objetos llamado 'array' y el nombre de una
@@ -14,7 +14,12 @@ function pluck(array, propiedad) {
   // Pista: es una buena oportunidad para usar map.
 
   // Tu código acá:
-
+  var x = propiedad
+  let n = array.map(function(element){
+    var v = element[x]
+    return v 
+  })
+  return n
 }
 
 // No modifiques nada debajo de esta linea //

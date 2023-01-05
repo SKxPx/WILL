@@ -1,8 +1,10 @@
+const { agregarMetodoPrototype } = require("../Curso-SoyHenry/Prep-Course/06-JS-V/homework/homework");
+
 /* 
   Importante: 
-  No modificar ni el nombre ni los argumetos que reciben las funciones, sólo deben escribir
+  No modificar ni el nombre ni los argumentos que reciben las funciones, sólo deben escribir
   código dentro de las funciones ya definidas. 
-  No comentar la funcion 
+  No comentar la función 
 */
 function crearClasePersona() {
   class Persona {
@@ -11,25 +13,29 @@ function crearClasePersona() {
       // Inicializar las propiedades de la persona con los valores recibidos como argumento
 
       // Tu código aca:
-
-    }
-
+      this.nombre = nombre
+      this.edad = edad
+      this.hobbies = hobbies
+      this.amigos = amigos
+    }; 
+    
     addFriend(nombre, edad) {
       // El método 'addFriend' recibe un string 'nombre' y un entero 'edad' y debe agregar un objeto:
       // { nombre: nombre, edad: edad} al arreglo de amigos de la persona.
       // No debe retornar nada.
 
       // Tu código aca:
-
-    }
+      var x = {nombre: nombre, edad: edad};
+      Persona.amigos = this.amigos.push(x); 
+    };
 
     addHobby(hobby) {
       // El método 'addHobby' recibe un string 'hobby' y debe agregarlo al arreglo de hobbies de la persona.
       // No debe retornar nada.
 
       // Tu código aca:
-
-    }
+      Persona.hobbies = this.hobbies.push(hobby);
+    };
     getFriends() {
       // El método 'getFriends' debe retornar un arreglo con sólo los nombres del arreglo de amigos
       // de la persona.
@@ -38,8 +44,10 @@ function crearClasePersona() {
       // persona.getFriends() debería devolver ['martin', 'toni']
 
       // Tu código aca:
-
-    }
+      var e = this.amigos;
+      var m = e.map((e) => e.nombre);
+      return m;
+    };
 
     getHobbies() {
       // El método 'getHobbies' debe retornar un arreglo con los hobbies de la persona
@@ -47,8 +55,9 @@ function crearClasePersona() {
       // persona.getHobbies() debe devolver ['correr', 'dormir', 'nadar']
 
       // Tu código aca:
-
-    }
+      var e = this.hobbies;
+      return e;
+    };
 
     getPromedioEdad() {
       // El método 'getPromedioEdad' debe retornar el promedio de edad de los amigos de una persona
@@ -66,8 +75,11 @@ function crearClasePersona() {
       // persona.getPromedioEdad() debería devolver 29 ya que (33 + 25) / 2 = 29
 
       // Tu código aca:
-
-    }
+      var e = this.amigos;
+      var m = e.map((e) => e.edad);
+      var n = (m.reduce((a, b) => a + b))/m.length;
+      return n;
+    };
   };
 
   return Persona;
